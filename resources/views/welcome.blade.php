@@ -27,7 +27,7 @@
                     <a href="/about" class="inline-block bg-wabag-red hover:bg-red-800 text-white font-bold py-2 px-6 rounded-lg transition duration-300">Learn More</a>
                 </div>
                 <div class="bg-white p-6 rounded-xl shadow-lg">
-                    <img src="https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Wabag District" class="w-full h-auto rounded-lg">
+                    <img src="{{ asset('images/about-us/enga-hq.avif') }}" alt="Wabag District" class="w-full h-auto rounded-lg">
                 </div>
             </div>
         </div>

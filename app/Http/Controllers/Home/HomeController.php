@@ -23,9 +23,14 @@ class HomeController extends Controller
         return view('home.about.ceos-message');
     }
 
-    public function missionVision()
+    public function administration()
     {
-        return view('home.about.mission-vision');
+        return view('home.administration');
+    }
+
+    public function developmentPlan()
+    {
+        return view('home.development-plan');
     }
 
     public function orgStructure()

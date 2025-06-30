@@ -18,8 +18,8 @@
                         'wabag-blue': '#1E3F66',
                     },
                     fontFamily: {
-                        sans: ['Open Sans', 'sans-serif'],
-                        serif: ['Playfair Display', 'serif'],
+                        sans: ['Poppins', 'sans-serif'],
+                        serif: ['Roboto', 'sans-serif'],
                     },
                 }
             }
@@ -138,7 +138,7 @@
                 <div class="flex items-center justify-between w-full md:w-auto mb-4 md:mb-0">
                     <div class="flex items-center logo-container">
                         <!-- Logo without border or shadow -->
-                        <img src="{{ asset('images/logo/enga-flag.png') }}" alt="Wabag DDA Logo" class="h-16 w-auto mr-4">
+                        <img src="{{ asset('images/logo/wabag-dda-logo.png') }}" alt="Wabag DDA Logo" class="h-16 w-auto mr-4">
 
                         <div>
                             <h1 class="text-2xl md:text-3xl font-serif font-bold">Wabag DDA</h1>
@@ -169,10 +169,10 @@
                             </div>
                         </li>
                         <li>
-                            <a href="{{ url('/administration') }}" class="block py-2 px-3 rounded hover:bg-wabag-red-dark transition @if(Request::is('projects*')) border-b-2 border-wabag-yellow @endif">Administration</a>
+                            <a href="{{ url('/administration') }}" class="block py-2 px-3 rounded hover:bg-wabag-red-dark transition @if(Request::is('administration*')) border-b-2 border-wabag-yellow @endif">Administration</a>
                         </li>
                         <li>
-                            <a href="{{ url('/development-plans') }}" class="block py-2 px-3 rounded hover:bg-wabag-red-dark transition @if(Request::is('projects*')) border-b-2 border-wabag-yellow @endif">Development Plans</a>
+                            <a href="{{ url('/development-plans') }}" class="block py-2 px-3 rounded hover:bg-wabag-red-dark transition @if(Request::is('development-plans*')) border-b-2 border-wabag-yellow @endif">Development Plans</a>
                         </li>
                         <li>
                             <a href="{{ url('/projects') }}" class="block py-2 px-3 rounded hover:bg-wabag-red-dark transition @if(Request::is('projects*')) border-b-2 border-wabag-yellow @endif">Projects</a>
@@ -260,7 +260,7 @@
                     <h3 class="text-lg font-bold mb-4">Government Links</h3>
                     <ul class="space-y-2 text-sm">
                         <li><a href="https://enga.gov.pg/" target="_blank" class="hover:text-wabag-yellow transition">Enga Provincial Government</a></li>
-                        <li><a href="https://pmnec.gov.pg/" target="_blank" class="hover:text-wabag-yellow transition">Prime Minister's Office</a></li>
+                        <li><a href="https://pmnec.gov.pg/" target="_blank" class="hover:text-wabag-yellow transition">PM NEC</a></li>
                          <li><a href="https://planning.gov.pg/" target="_blank" class="hover:text-wabag-yellow transition">National Planning & Monitoring</a></li>
                         <li><a href="https://www.treasury.gov.pg/" target="_blank" class="hover:text-wabag-yellow transition">Department of Treasury</a></li>
                         <li><a href="https://www.finance.gov.pg/" target="_blank" class="hover:text-wabag-yellow transition">Department of Finance</a></li>
@@ -355,17 +355,17 @@
     });
 
         // For smooth scrolling to sections
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth'
-                    });
-                }
-            });
-        });
+       // document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      //      anchor.addEventListener('click', function(e) {
+      //          e.preventDefault();
+       //         const target = document.querySelector(this.getAttribute('href'));
+       //         if (target) {
+       //             target.scrollIntoView({
+       //                 behavior: 'smooth'
+       //             });
+       //         }
+       //     });
+      //  });
 
     </script>
     @stack('scripts')

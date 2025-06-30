@@ -25,4 +25,5 @@ Route::get('/about/mps-message', [HomeController::class, 'mpsMessage'])->name('h
 Route::get('/about/ceos-message', [HomeController::class, 'ceosMessage'])->name('home.about.ceos-message');
 Route::get('/about/mission-vision', [HomeController::class, 'missionVision'])->name('home.about.mission-vision');
 Route::get('/about/organization-structure', [HomeController::class, 'orgStructure'])->name('home.about.org-structure');
-
+Route::get('/administration', [HomeController::class, 'administration'])->name('home.administration');
+Route::get('/development-plans', [HomeController::class, 'developmentPlan'])->name('home.development-plan');
