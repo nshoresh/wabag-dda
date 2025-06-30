@@ -25,7 +25,7 @@
 
             <!-- Slide 3 -->
             <div class="absolute inset-0 w-full h-full transition-opacity duration-1000 ease-in-out opacity-0 z-0">
-                <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?ixlib=rb-1.2.1&auto=format&fit=crop&w=1600&q=80"
+                <img src="{{ asset('images/about-us/slide-img/school-upgrade.jpg') }}"
                      alt="Infrastructure Projects"
                      class="w-full h-full object-cover">
                 <div class="absolute inset-0 bg-gradient-to-r from-wabag-green/80 to-wabag-blue/80"></div>
@@ -33,7 +33,7 @@
 
             <!-- Slide 4 -->
             <div class="absolute inset-0 w-full h-full transition-opacity duration-1000 ease-in-out opacity-0 z-0">
-                <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1600&q=80"
+                <img src="{{ asset('images/about-us/slide-img/sports.jpg') }}"
                      alt="Community Engagement"
                      class="w-full h-full object-cover">
                 <div class="absolute inset-0 bg-gradient-to-r from-wabag-green/80 to-wabag-blue/80"></div>
@@ -70,7 +70,7 @@
                     <div class="w-24 h-1 bg-wabag-yellow mb-6"></div>
                     <p class="text-lg mb-4">The Wabag District Development Authority is committed to improving the quality of life for all residents through strategic development initiatives, infrastructure projects, and community empowerment programs.</p>
                     <p class="text-lg mb-6">Our mission is to foster sustainable development that benefits current and future generations while preserving our cultural heritage and natural resources.</p>
-                    <a href="{{ url('/about-wabag-dda') }}" class="inline-block bg-wabag-red hover:bg-red-800 text-white font-bold py-2 px-6 rounded-lg transition duration-300">Learn More</a>
+                    <a href="/about" class="inline-block bg-wabag-red hover:bg-red-800 text-white font-bold py-2 px-6 rounded-lg transition duration-300">Learn More</a>
                 </div>
                 <div class="bg-white p-6 rounded-xl shadow-lg">
                     <img src="{{ asset('images/about-us/enga-hq.avif') }}" alt="Wabag District" class="w-full h-auto rounded-lg">
@@ -90,16 +90,19 @@
 
             <div class="grid md:grid-cols-3 gap-8">
                 <!-- Project 1 -->
-                <div class="bg-gradient-to-b from-wabag-blue to-wabag-green text-white p-6 rounded-xl shadow-lg">
-                    <div class="flex items-center mb-4">
-                        <div class="bg-white bg-opacity-20 p-3 rounded-full mr-4">
-                            <svg class="h-8 w-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zm12-3c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zM9 10l12-3"></path>
-                            </svg>
+                <div class="bg-gradient-to-b from-wabag-blue to-wabag-green text-white p-6 rounded-xl shadow-lg flex flex-col">
+                    <div class="mb-4">
+                        <span class="inline-block bg-white bg-opacity-20 text-xs px-3 py-1 rounded-full mb-3">Infrastructure</span>
+                        <div class="flex items-center">
+                            <div class="bg-white bg-opacity-20 p-3 rounded-full mr-4">
+                                <svg class="h-8 w-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zm12-3c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zM9 10l12-3"></path>
+                                </svg>
+                            </div>
+                            <h3 class="text-xl font-serif font-bold">Wabag Central Water Supply</h3>
                         </div>
-                        <h3 class="text-xl font-serif font-bold">Wabag Central Water Supply</h3>
                     </div>
-                    <ul class="space-y-3 text-sm">
+                    <ul class="space-y-3 text-sm mb-6">
                         <li class="flex items-start">
                             <svg class="h-4 w-4 text-wabag-yellow mt-1 mr-2" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
                             <span>Installation of modern water treatment system</span>
@@ -113,28 +116,37 @@
                             <span>Budget: K1,000,000</span>
                         </li>
                     </ul>
-                    <div class="mt-6">
+                    <div class="mt-auto">
                         <div class="flex justify-between text-sm mb-1">
                             <span>Progress</span>
                             <span>100% Complete</span>
                         </div>
-                        <div class="w-full bg-white bg-opacity-20 rounded-full h-2">
+                        <div class="w-full bg-white bg-opacity-20 rounded-full h-2 mb-6">
                             <div class="bg-wabag-yellow h-2 rounded-full" style="width: 100%"></div>
                         </div>
+                        <a href="/projects/water-supply" class="w-full bg-white bg-opacity-20 hover:bg-opacity-30 text-white font-bold py-2 px-4 rounded-lg text-center transition duration-300 inline-flex items-center justify-center">
+                            Read More
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                            </svg>
+                        </a>
                     </div>
                 </div>
 
                 <!-- Project 2 -->
-                <div class="bg-gradient-to-b from-wabag-red to-wabag-brown text-white p-6 rounded-xl shadow-lg">
-                    <div class="flex items-center mb-4">
-                        <div class="bg-white bg-opacity-20 p-3 rounded-full mr-4">
-                            <svg class="h-8 w-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
-                            </svg>
+                <div class="bg-gradient-to-b from-wabag-red to-wabag-brown text-white p-6 rounded-xl shadow-lg flex flex-col">
+                    <div class="mb-4">
+                        <span class="inline-block bg-white bg-opacity-20 text-xs px-3 py-1 rounded-full mb-3">Health</span>
+                        <div class="flex items-center">
+                            <div class="bg-white bg-opacity-20 p-3 rounded-full mr-4">
+                                <svg class="h-8 w-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
+                                </svg>
+                            </div>
+                            <h3 class="text-xl font-serif font-bold">Hospital Expansion</h3>
                         </div>
-                        <h3 class="text-xl font-serif font-bold">Hospital Expansion</h3>
                     </div>
-                    <ul class="space-y-3 text-sm">
+                    <ul class="space-y-3 text-sm mb-6">
                         <li class="flex items-start">
                             <svg class="h-4 w-4 text-wabag-yellow mt-1 mr-2" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
                             <span>New wards and modern equipment</span>
@@ -148,28 +160,37 @@
                             <span>Budget: K1,500,000</span>
                         </li>
                     </ul>
-                    <div class="mt-6">
+                    <div class="mt-auto">
                         <div class="flex justify-between text-sm mb-1">
                             <span>Progress</span>
                             <span>60% Complete</span>
                         </div>
-                        <div class="w-full bg-white bg-opacity-20 rounded-full h-2">
+                        <div class="w-full bg-white bg-opacity-20 rounded-full h-2 mb-6">
                             <div class="bg-wabag-yellow h-2 rounded-full" style="width: 60%"></div>
                         </div>
+                        <a href="/projects/hospital-expansion" class="w-full bg-white bg-opacity-20 hover:bg-opacity-30 text-white font-bold py-2 px-4 rounded-lg text-center transition duration-300 inline-flex items-center justify-center">
+                            Read More
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                            </svg>
+                        </a>
                     </div>
                 </div>
 
                 <!-- Project 3 -->
-                <div class="bg-gradient-to-b from-wabag-green to-wabag-blue text-white p-6 rounded-xl shadow-lg">
-                    <div class="flex items-center mb-4">
-                        <div class="bg-white bg-opacity-20 p-3 rounded-full mr-4">
-                            <svg class="h-8 w-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7v8a2 2 0 002 2h6M8 7V5a2 2 0 012-2h4.586a1 1 0 01.707.293l4.414 4.414a1 1 0 01.293.707V15a2 2 0 01-2 2h-2M8 7H6a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2v-2"></path>
-                            </svg>
+                <div class="bg-gradient-to-b from-wabag-green to-wabag-blue text-white p-6 rounded-xl shadow-lg flex flex-col">
+                    <div class="mb-4">
+                        <span class="inline-block bg-white bg-opacity-20 text-xs px-3 py-1 rounded-full mb-3">Infrastructure</span>
+                        <div class="flex items-center">
+                            <div class="bg-white bg-opacity-20 p-3 rounded-full mr-4">
+                                <svg class="h-8 w-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7v8a2 2 0 002 2h6M8 7V5a2 2 0 012-2h4.586a1 1 0 01.707.293l4.414 4.414a1 1 0 01.293.707V15a2 2 0 01-2 2h-2M8 7H6a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2v-2"></path>
+                                </svg>
+                            </div>
+                            <h3 class="text-xl font-serif font-bold">Rural Roads Rehabilitation</h3>
                         </div>
-                        <h3 class="text-xl font-serif font-bold">Rural Roads Rehabilitation</h3>
                     </div>
-                    <ul class="space-y-3 text-sm">
+                    <ul class="space-y-3 text-sm mb-6">
                         <li class="flex items-start">
                             <svg class="h-4 w-4 text-wabag-yellow mt-1 mr-2" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
                             <span>Upgrading rural roads network</span>
@@ -183,14 +204,20 @@
                             <span>Budget: K2,000,000</span>
                         </li>
                     </ul>
-                    <div class="mt-6">
+                    <div class="mt-auto">
                         <div class="flex justify-between text-sm mb-1">
                             <span>Progress</span>
                             <span>30% Complete</span>
                         </div>
-                        <div class="w-full bg-white bg-opacity-20 rounded-full h-2">
+                        <div class="w-full bg-white bg-opacity-20 rounded-full h-2 mb-6">
                             <div class="bg-wabag-yellow h-2 rounded-full" style="width: 30%"></div>
                         </div>
+                        <a href="/projects/roads-rehabilitation" class="w-full bg-white bg-opacity-20 hover:bg-opacity-30 text-white font-bold py-2 px-4 rounded-lg text-center transition duration-300 inline-flex items-center justify-center">
+                            Read More
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                            </svg>
+                        </a>
                     </div>
                 </div>
             </div>
