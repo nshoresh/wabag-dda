@@ -3,14 +3,60 @@
 @section('title', 'Wabag District Development Authority')
 
 @section('content')
-    <!-- Hero Section -->
-    <section class="bg-gradient-to-r from-wabag-green to-wabag-blue text-white py-20">
-        <div class="container mx-auto px-6 text-center">
-            <h1 class="text-4xl md:text-5xl font-serif font-bold mb-6">Developing Wabag District Together</h1>
-            <p class="text-xl max-w-3xl mx-auto mb-8">Empowering communities through sustainable development projects and initiatives.</p>
-            <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                <a href="/projects" class="bg-wabag-yellow hover:bg-yellow-600 text-wabag-brown font-bold py-3 px-6 rounded-lg text-center transition duration-300">Our Projects</a>
-                <a href="/contact" class="bg-white hover:bg-gray-100 text-wabag-blue font-bold py-3 px-6 rounded-lg text-center transition duration-300">Contact Us</a>
+    <!-- Hero Section with Slideshow -->
+    <section>
+        <!-- Slideshow Container -->
+        <div class="relative h-screen max-h-[600px] overflow-hidden">
+            <!-- Slide 1 -->
+            <div class="absolute inset-0 w-full h-full transition-opacity duration-1000 ease-in-out opacity-100 z-10">
+                <img src="{{ asset('images/about-us/slide-img/road-upgrade.jpg') }}"
+                     alt="Wabag Landscape"
+                     class="w-full h-full object-cover">
+                <div class="absolute inset-0 bg-gradient-to-r from-wabag-green/80 to-wabag-blue/80"></div>
+            </div>
+
+            <!-- Slide 2 -->
+            <div class="absolute inset-0 w-full h-full transition-opacity duration-1000 ease-in-out opacity-0 z-0">
+                <img src="{{ asset('images/about-us/slide-img/hospital-upgrade.jpg') }}"
+                     alt="Community Development"
+                     class="w-full h-full object-cover">
+                <div class="absolute inset-0 bg-gradient-to-r from-wabag-green/80 to-wabag-blue/80"></div>
+            </div>
+
+            <!-- Slide 3 -->
+            <div class="absolute inset-0 w-full h-full transition-opacity duration-1000 ease-in-out opacity-0 z-0">
+                <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?ixlib=rb-1.2.1&auto=format&fit=crop&w=1600&q=80"
+                     alt="Infrastructure Projects"
+                     class="w-full h-full object-cover">
+                <div class="absolute inset-0 bg-gradient-to-r from-wabag-green/80 to-wabag-blue/80"></div>
+            </div>
+
+            <!-- Slide 4 -->
+            <div class="absolute inset-0 w-full h-full transition-opacity duration-1000 ease-in-out opacity-0 z-0">
+                <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1600&q=80"
+                     alt="Community Engagement"
+                     class="w-full h-full object-cover">
+                <div class="absolute inset-0 bg-gradient-to-r from-wabag-green/80 to-wabag-blue/80"></div>
+            </div>
+
+            <!-- Slideshow Content -->
+            <div class="absolute inset-0 flex items-center justify-center text-center px-6 z-20">
+                <div class="max-w-3xl mx-auto text-white">
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-serif font-bold mb-6 animate-fadeIn">Developing Wabag District Together</h1>
+                    <p class="text-xl md:text-2xl mb-8 animate-fadeIn delay-100">Empowering communities through sustainable development projects and initiatives.</p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center animate-fadeIn delay-200">
+                        <a href="/projects" class="bg-wabag-yellow hover:bg-yellow-600 text-wabag-brown font-bold py-3 px-6 rounded-lg text-center transition duration-300">Our Projects</a>
+                        <a href="/contact" class="bg-white hover:bg-gray-100 text-wabag-blue font-bold py-3 px-6 rounded-lg text-center transition duration-300">Contact Us</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slideshow Navigation -->
+            <div class="absolute bottom-8 left-0 right-0 flex justify-center space-x-2 z-20">
+                <button class="w-3 h-3 rounded-full bg-white bg-opacity-50 hover:bg-opacity-100 transition" data-slide="0"></button>
+                <button class="w-3 h-3 rounded-full bg-white bg-opacity-50 hover:bg-opacity-100 transition" data-slide="1"></button>
+                <button class="w-3 h-3 rounded-full bg-white bg-opacity-50 hover:bg-opacity-100 transition" data-slide="2"></button>
+                <button class="w-3 h-3 rounded-full bg-white bg-opacity-50 hover:bg-opacity-100 transition" data-slide="3"></button>
             </div>
         </div>
     </section>
@@ -24,7 +70,7 @@
                     <div class="w-24 h-1 bg-wabag-yellow mb-6"></div>
                     <p class="text-lg mb-4">The Wabag District Development Authority is committed to improving the quality of life for all residents through strategic development initiatives, infrastructure projects, and community empowerment programs.</p>
                     <p class="text-lg mb-6">Our mission is to foster sustainable development that benefits current and future generations while preserving our cultural heritage and natural resources.</p>
-                    <a href="/about" class="inline-block bg-wabag-red hover:bg-red-800 text-white font-bold py-2 px-6 rounded-lg transition duration-300">Learn More</a>
+                    <a href="{{ url('/about-wabag-dda') }}" class="inline-block bg-wabag-red hover:bg-red-800 text-white font-bold py-2 px-6 rounded-lg transition duration-300">Learn More</a>
                 </div>
                 <div class="bg-white p-6 rounded-xl shadow-lg">
                     <img src="{{ asset('images/about-us/enga-hq.avif') }}" alt="Wabag District" class="w-full h-auto rounded-lg">
@@ -317,4 +363,57 @@
             </div>
         </div>
     </section>
+
+    <!-- Slideshow JavaScript -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const slides = document.querySelectorAll('.relative > div[class*="transition-opacity"]');
+            const dots = document.querySelectorAll('[data-slide]');
+            let currentSlide = 0;
+            let slideInterval;
+
+            function showSlide(index) {
+                // Hide all slides
+                slides.forEach(slide => {
+                    slide.classList.remove('opacity-100', 'z-10');
+                    slide.classList.add('opacity-0', 'z-0');
+                });
+
+                // Show current slide
+                slides[index].classList.remove('opacity-0', 'z-0');
+                slides[index].classList.add('opacity-100', 'z-10');
+
+                // Update dots
+                dots.forEach(dot => dot.classList.remove('bg-opacity-100'));
+                dots[index].classList.add('bg-opacity-100');
+
+                currentSlide = index;
+            }
+
+            function nextSlide() {
+                const nextIndex = (currentSlide + 1) % slides.length;
+                showSlide(nextIndex);
+            }
+
+            // Initialize first slide
+            showSlide(0);
+
+            // Start auto-rotation
+            function startSlideShow() {
+                slideInterval = setInterval(nextSlide, 5000);
+            }
+            startSlideShow();
+
+            // Dot navigation
+            dots.forEach(dot => {
+                dot.addEventListener('click', function() {
+                    const slideIndex = parseInt(this.getAttribute('data-slide'));
+                    showSlide(slideIndex);
+                    // Reset interval
+                    clearInterval(slideInterval);
+                    startSlideShow();
+                });
+            });
+        });
+    </script>
 @endsection
