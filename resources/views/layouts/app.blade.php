@@ -159,23 +159,50 @@
                         <li>
                             <a href="{{ url('/') }}" class="block py-2 px-3 rounded hover:bg-wabag-red-dark transition @if(Request::is('/')) border-b-2 border-wabag-yellow @endif">Home</a>
                         </li>
-                        <li class="dropdown relative">
-                            <a href="{{ url('/about-wabag-dda') }}" class="block py-2 px-3 rounded hover:bg-wabag-red-dark transition @if(Request::is('about*')) border-b-2 border-wabag-yellow @endif">About</a>
-                            <div class="dropdown-menu hidden absolute left-0 mt-0">
+                        <li class="dropdown relative group">
+                            <a href="{{ url('/about-wabag-dda') }}" class="block py-2 px-3 rounded hover:bg-wabag-red-dark transition @if(Request::is('about*')) border-b-2 border-wabag-yellow @endif flex items-center">
+                                About
+                                <svg class="w-4 h-4 ml-1 transition-transform duration-200 group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                                </svg>
+                            </a>
+                            <div class="dropdown-menu hidden group-hover:block absolute left-0 mt-0">
                                 <a href="{{ url('/about/mps-message') }}" class="hover:bg-wabag-red-dark">MP's Message</a>
                                 <a href="{{ url('/about/ceos-message') }}" class="hover:bg-wabag-red-dark">CEO's Message</a>
                                 <a href="{{ url('/about/history') }}" class="hover:bg-wabag-red-dark">Our History</a>
                                 <a href="{{ url('/about/team') }}" class="hover:bg-wabag-red-dark">Our Team</a>
                             </div>
                         </li>
-                        <li>
-                            <a href="{{ url('/administration') }}" class="block py-2 px-3 rounded hover:bg-wabag-red-dark transition @if(Request::is('administration*')) border-b-2 border-wabag-yellow @endif">Administration</a>
+                        <li class="dropdown relative group">
+                            <a href="{{ url('/administration') }}" class="block py-2 px-3 rounded hover:bg-wabag-red-dark transition @if(Request::is('administration*')) border-b-2 border-wabag-yellow @endif flex items-center">
+                                Administration
+                                <svg class="w-4 h-4 ml-1 transition-transform duration-200 group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                                </svg>
+                            </a>
+                            <div class="dropdown-menu hidden group-hover:block absolute left-0 mt-0">
+                                <a href="{{ url('/administration/executive') }}" class="hover:bg-wabag-red-dark">Executive Services</a>
+                                <a href="{{ url('/administration/finance') }}" class="hover:bg-wabag-red-dark">Finance Division</a>
+                                <a href="{{ url('/administration/planning') }}" class="hover:bg-wabag-red-dark">Planning Division</a>
+                                <a href="{{ url('/administration/works') }}" class="hover:bg-wabag-red-dark">Works & Infrastructure</a>
+                            </div>
                         </li>
                         <li>
                             <a href="{{ url('/development-plans') }}" class="block py-2 px-3 rounded hover:bg-wabag-red-dark transition @if(Request::is('development-plans*')) border-b-2 border-wabag-yellow @endif">Development Plans</a>
                         </li>
-                        <li>
-                            <a href="{{ url('/projects') }}" class="block py-2 px-3 rounded hover:bg-wabag-red-dark transition @if(Request::is('projects*')) border-b-2 border-wabag-yellow @endif">Projects</a>
+                        <li class="dropdown relative group">
+                            <a href="{{ url('/projects') }}" class="block py-2 px-3 rounded hover:bg-wabag-red-dark transition @if(Request::is('projects*')) border-b-2 border-wabag-yellow @endif flex items-center">
+                                Projects
+                                <svg class="w-4 h-4 ml-1 transition-transform duration-200 group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                                </svg>
+                            </a>
+                            <div class="dropdown-menu hidden group-hover:block absolute left-0 mt-0">
+                                <a href="{{ url('/projects/health') }}" class="hover:bg-wabag-red-dark">Health Projects</a>
+                                <a href="{{ url('/projects/education') }}" class="hover:bg-wabag-red-dark">Education Projects</a>
+                                <a href="{{ url('/projects/infrastructure') }}" class="hover:bg-wabag-red-dark">Infrastructure</a>
+                                <a href="{{ url('/projects/community') }}" class="hover:bg-wabag-red-dark">Community Development</a>
+                            </div>
                         </li>
                         <li>
                             <a href="{{ url('/news') }}" class="block py-2 px-3 rounded hover:bg-wabag-red-dark transition @if(Request::is('news*')) border-b-2 border-wabag-yellow @endif">News</a>
@@ -187,7 +214,7 @@
                 </nav>
             </div>
 
-            <!-- Mobile Navigation -->
+            <!-- Mobile Navigation - Simple links without sticky behavior -->
             <div class="mobile-menu md:hidden bg-wabag-red-dark" id="mobile-menu">
                 <ul class="flex flex-col space-y-2 px-4 py-2">
                     <li>
@@ -195,18 +222,13 @@
                     </li>
                     <li>
                         <a href="{{ url('/about-wabag-dda') }}" class="block py-2 px-3 rounded hover:bg-wabag-red transition">About</a>
-                        <ul class="ml-4 mt-1 space-y-1">
-                            <li><a href="{{ url('/about/mps-message') }}" class="block py-1 px-3 rounded hover:bg-wabag-red transition">MP's Message</a></li>
-                            <li><a href="{{ url('/about/ceos-message') }}" class="block py-1 px-3 rounded hover:bg-wabag-red transition">CEO's Message</a></li>
-                            <li><a href="{{ url('/about/history') }}" class="block py-1 px-3 rounded hover:bg-wabag-red transition">Our History</a></li>
-                            <li><a href="{{ url('/about/team') }}" class="block py-1 px-3 rounded hover:bg-wabag-red transition">Our Team</a></li>
-                        </ul>
                     </li>
                     <li>
                         <a href="{{ url('/administration') }}" class="block py-2 px-3 rounded hover:bg-wabag-red transition">Administration</a>
                     </li>
                     <li>
                         <a href="{{ url('/development-plans') }}" class="block py-2 px-3 rounded hover:bg-wabag-red transition">Development Plans</a>
+                    </li>
                     <li>
                         <a href="{{ url('/projects') }}" class="block py-2 px-3 rounded hover:bg-wabag-red transition">Projects</a>
                     </li>
