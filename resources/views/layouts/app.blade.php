@@ -308,6 +308,7 @@
                         <li><a href="#" class="hover:text-wabag-yellow transition">Sitemap</a></li>
                         <li><a href="#" class="hover:text-wabag-yellow transition">Accessibility</a></li>
                         <li><a href="#" class="hover:text-wabag-yellow transition">Feedback</a></li>
+                        <li><a href="{{ url('admin/login') }}" class="hover:text-wabag-yellow transition">Admin Login</a></li>
                     </ul>
                 </div>
             </div>
