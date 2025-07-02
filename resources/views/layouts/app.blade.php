@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@yield('title') | Wabag District Development Authority</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="icon" href="{{ asset('ep-flag.png') }}" type="image/png">
+
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
     <script>
         tailwind.config = {
@@ -169,8 +171,6 @@
                             <div class="dropdown-menu hidden group-hover:block absolute left-0 mt-0">
                                 <a href="{{ url('/about/mps-message') }}" class="hover:bg-wabag-red-dark">MP's Message</a>
                                 <a href="{{ url('/about/ceos-message') }}" class="hover:bg-wabag-red-dark">CEO's Message</a>
-                                <a href="{{ url('/about/history') }}" class="hover:bg-wabag-red-dark">Our History</a>
-                                <a href="{{ url('/about/team') }}" class="hover:bg-wabag-red-dark">Our Team</a>
                             </div>
                         </li>
                         <li class="dropdown relative group">
@@ -308,7 +308,11 @@
                         <li><a href="#" class="hover:text-wabag-yellow transition">Sitemap</a></li>
                         <li><a href="#" class="hover:text-wabag-yellow transition">Accessibility</a></li>
                         <li><a href="#" class="hover:text-wabag-yellow transition">Feedback</a></li>
+
                         <li><a href="{{ url('admin/login') }}" class="hover:text-wabag-yellow transition">Admin Login</a></li>
+
+                        <li><a href="#" class="hover:text-wabag-yellow transition">Admin Login</a></li>
+
                     </ul>
                 </div>
             </div>
