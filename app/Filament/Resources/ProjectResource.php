@@ -2,6 +2,8 @@
 
 namespace App\Filament\Resources;
 
+use App\Models\ProjectCategory;
+
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Auth;
 use App\Models\User;
@@ -87,6 +89,19 @@ public static function canDelete(Model $record): bool
                     ->required()
                     ->maxLength(255),
 
+                Select::make('project_category_id')
+                    ->label('Project Category')
+                    ->relationship('category', 'name')
+                    ->searchable()
+                    ->required(),
+
+
+                /*Select::make('project_category_id')
+                    ->label('Project Type')
+                    ->options(ProjectCategory::all()->pluck('name', 'id'))
+                    ->searchable()
+                    ->required(),*/
+
                 TextInput::make('location')
                     ->label('Project Location')
                     ->maxLength(255),
@@ -126,6 +141,7 @@ public static function canDelete(Model $record): bool
         return $table
         ->columns([
             TextColumn::make('title')->searchable()->sortable(),
+            TextColumn::make('category.name')->label('Category')->sortable(),
             TextColumn::make('location')->sortable(),
             BadgeColumn::make('status')
                 ->badge()

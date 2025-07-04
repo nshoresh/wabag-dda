@@ -309,9 +309,12 @@
                         <li><a href="#" class="hover:text-wabag-yellow transition">Accessibility</a></li>
                         <li><a href="#" class="hover:text-wabag-yellow transition">Feedback</a></li>
 
-                        <li><a href="{{ url('admin/login') }}" class="hover:text-wabag-yellow transition">Admin Login</a></li>
-
-                        <li><a href="#" class="hover:text-wabag-yellow transition">Admin Login</a></li>
+                        <li>
+                            <a href="{{ url('admin/login') }}" 
+                            class="bg-wabag-yellow text-white font-semibold px-4 py-2 rounded hover:bg-yellow-600 transition">
+                                Admin Login
+                            </a>
+                        </li>
 
                     </ul>
                 </div>

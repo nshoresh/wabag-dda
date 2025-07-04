@@ -18,4 +18,10 @@ class Project extends Model
         'start_date',
         'end_date',
     ];
+
+    public function category()
+    {
+        return $this->belongsTo(ProjectCategory::class, 'project_category_id');
+    }
 }
+
