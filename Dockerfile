@@ -1,15 +1,24 @@
 # Use official PHP image with FPM
 FROM php:8.2-fpm
 
-# Install system dependencies and PHP extensions
+# Install system packages and PHP extensions
 RUN apt-get update && apt-get install -y \
     build-essential \
     libpng-dev \
     libjpeg-dev \
     libonig-dev \
     libxml2-dev \
-    zip unzip curl git libzip-dev npm yarn \
-    && docker-php-ext-install pdo_mysql mbstring zip exif pcntl bcmath
+    libzip-dev \
+    libicu-dev \
+    zip unzip curl git npm yarn \
+    && docker-php-ext-install \
+        intl \
+        pdo_mysql \
+        mbstring \
+        zip \
+        exif \
+        pcntl \
+        bcmath
 
 # Install Composer
 COPY --from=composer:2 /usr/bin/composer /usr/bin/composer
