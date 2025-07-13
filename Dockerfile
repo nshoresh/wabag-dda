@@ -38,7 +38,10 @@ RUN cp .env.example .env \
  && php artisan key:generate \
  && php artisan config:cache \
  && php artisan route:cache \
- && php artisan storage:link \
+ && php artisan storage:link 
+
+ RUN chown -R www-data:www-data /var/www
+ 
 #&& php artisan migrate --force
 # Set correct permissions
 RUN chown -R www-data:www-data /var/www
