@@ -33,7 +33,7 @@ RUN composer install --optimize-autoloader --no-dev
 # Install JS dependencies and build assets
 RUN yarn install && yarn prod
 
-# Laravel optimizations # Laravel setup (with .env and key)
+# Laravel optimizations # Laravel setup (with .env and key) 
 RUN cp .env.example .env \
  && php artisan key:generate \
  && php artisan config:cache \
