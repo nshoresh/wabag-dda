@@ -34,9 +34,13 @@ RUN composer install --optimize-autoloader --no-dev
 RUN yarn install && yarn prod
 
 # Laravel optimizations # Laravel setup (with .env and key) 
-RUN php artisan config:cache \
- && php artisan route:cache \
- && php artisan storage:link 
+# Laravel setup (after dependencies are installed)
+RUN cp .env.example .env && \
+    php artisan key:generate && \
+    php artisan config:cache && \
+    php artisan route:cache && \
+    php artisan migrate --force && \
+    php artisan storage:link
 
  RUN chown -R www-data:www-data /var/www
  
