@@ -38,7 +38,7 @@ RUN yarn install && yarn prod
 RUN cp .env.example .env && \
     php artisan key:generate && \
     php artisan config:cache && \
-    php artisan route:cache && \ 
+    php artisan route:cache && \
     php artisan migrate --force && \
     php artisan storage:link
 
