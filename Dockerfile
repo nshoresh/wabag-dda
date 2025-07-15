@@ -35,7 +35,8 @@ RUN yarn install && yarn prod
 
 # Laravel optimizations # Laravel setup (with .env and key) 
 # Laravel setup (after dependencies are installed)
-RUN php artisan key:generate && \
+RUN cp .env.example .env && \
+    php artisan key:generate && \
     php artisan config:cache && \
     php artisan route:cache && \
     php artisan migrate --force && \
